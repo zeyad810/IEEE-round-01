@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="debounce">Pay</button>
+
+    <script>
+        function handlePay() {
+            console.log("paid");
+        }
+
+        // Add debouncing to the button click handler
+        document.getElementById("debounce").addEventListener('click', debounce(handlePay, 3000));
+
+        function debounce(cb, delay) {
+            let timeout;
+            return function () {
+                if (timeout) {
+                    clearTimeout(timeout);
+                }
+                timeout = setTimeout(() => {
+                    cb();
+                }, delay);
+            };
+        }
+    </script>
+</body>
+
+</html>

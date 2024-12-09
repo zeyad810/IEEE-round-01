@@ -1,0 +1,2 @@
+Debouncing is a way to control how often a function is executed. It ensures the function runs only after a certain amount of time has passed since the last event.	
+And why it`s useful :because it`s help to improve the performance of web applications 
